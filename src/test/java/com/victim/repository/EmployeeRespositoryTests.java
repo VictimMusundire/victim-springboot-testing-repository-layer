@@ -2,6 +2,8 @@ package com.victim.repository;
 
 import com.victim.model.Employee;
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,21 @@ public class EmployeeRespositoryTests {
 
     @Autowired
     private EmployeeRepository employeeRepository;
+
+
+//    ====================================================================================================================
+//    THIS BELOW IS THE STANDARD WAY OF CREATING AN OBJECT FOR EVERY TEST METHOD, YOU CAN COMMENT THE ONES IN TEST METHODS
+//    ====================================================================================================================
+//    private Employee employee;
+//    @BeforeEach
+//    public void setUp(){
+//        employee = Employee.builder()
+//                .firstName("Victim")
+//                .lastName("Musundire")
+//                .email("ramesh@gmail,com")
+//                .build();
+//    }
+
 
     // JUnit test for save employee operation
     //@DisplayName("JUnit test for save employee operation")
@@ -229,5 +246,6 @@ public class EmployeeRespositoryTests {
         // then - verify the output
         assertThat(savedEmployee).isNotNull();
     }
+
 
 }
